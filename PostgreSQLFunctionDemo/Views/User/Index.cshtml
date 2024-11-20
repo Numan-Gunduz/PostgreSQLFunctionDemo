@@ -1,0 +1,56 @@
+﻿@model IEnumerable<PostgreSQLFunctionDemo.Models.User>
+
+<h1>User List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Total Orders</th>
+            <th>Full Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>
+                    <form method="post" asp-action="CalculateTotalOrder">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <button type="submit">Calculate</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="GetFullName">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <button type="submit">Get Full Name</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="GetUserOrderSummary">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <input type="hidden" name="includeDetails" value="true" />
+                        <button type="submit">Get Order Summary</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="GetLastOrderDate">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <button type="submit">Get Last Order Date</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-action="GetOrderCountByUser">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <button type="submit">Get Order Count</button>
+                    </form>
+                </td>
+         
+
+            </tr>
+        }
+    </tbody>
+</table>
