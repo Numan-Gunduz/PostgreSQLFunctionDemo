@@ -20,34 +20,24 @@
                 <td>
                     <form method="post" asp-action="CalculateTotalOrder">
                         <input type="hidden" name="userId" value="@user.Id" />
-                        <button type="submit">Calculate</button>
+                        <button type="submit">Sipariş toplamını hesapla</button>
                     </form>
                 </td>
-                <td>
-                    <form method="post" asp-action="GetFullName">
-                        <input type="hidden" name="userId" value="@user.Id" />
-                        <button type="submit">Get Full Name</button>
-                    </form>
-                </td>
+         
                 <td>
                     <form method="post" asp-action="GetUserOrderSummary">
                         <input type="hidden" name="userId" value="@user.Id" />
                         <input type="hidden" name="includeDetails" value="true" />
-                        <button type="submit">Get Order Summary</button>
+                        <button type="submit">Sipariş özeti</button>
                     </form>
                 </td>
                 <td>
                     <form method="post" asp-action="GetLastOrderDate">
                         <input type="hidden" name="userId" value="@user.Id" />
-                        <button type="submit">Get Last Order Date</button>
+                        <button type="submit">Son Sipariş Tarihi</button>
                     </form>
                 </td>
-                <td>
-                    <form method="post" asp-action="GetOrderCountByUser">
-                        <input type="hidden" name="userId" value="@user.Id" />
-                        <button type="submit">Get Order Count</button>
-                    </form>
-                </td>
+              
          
 
             </tr>

@@ -17,6 +17,8 @@ using (var scope = app.Services.CreateScope())
 
     var functionService = scope.ServiceProvider.GetRequiredService<DatabaseFunctionService>();
     functionService.CreateFunctions(); // Fonksiyonlarý oluþtur
+    dbContext.SeedData(); // Test verilerini ekle
+
 }
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
